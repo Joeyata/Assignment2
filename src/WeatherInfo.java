@@ -8,6 +8,18 @@ public class WeatherInfo {
     private double apparent_t;
     private String cloud;
 
+    public WeatherInfo(String id, String name, String state, String time_zone, String local_date_time_full,
+                       double air_temp, double apparent_t, String cloud) {
+        this.id = id;
+        this.name = name;
+        this.state = state;
+        this.time_zone = time_zone;
+        this.full_time = local_date_time_full;
+        this.air_temp = air_temp;
+        this.apparent_t = apparent_t;
+        this.cloud = cloud;
+    }
+
     public String get_id() { return id; }
     public String get_name() { return name; }
     public String get_state() { return state; }
@@ -26,6 +38,8 @@ public class WeatherInfo {
     public void set_air_temp(double air_temp) { this.air_temp = air_temp; }
     public void set_apparent_t(double apparent_t) { this.apparent_t = apparent_t; }
     public void set_cloud(String cloud) { this.cloud = cloud; }
+
+
     public boolean isValid()
     {
         if(this.id == null) return false;
