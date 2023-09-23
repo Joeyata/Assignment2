@@ -23,7 +23,15 @@ public class GETClient {
 
             if (response == HttpURLConnection.HTTP_OK) //200
             {
-                // handle get
+                BufferedReader input_stream = new BufferedReader(new InputStreamReader(link.getInputStream()));
+                StringBuffer bf = new StringBuffer();
+
+                while (input_stream.readLine() != null) {
+                    bf.append(input_stream.readLine());
+                }
+                input_stream.close();
+
+                System.out.println("AggregationServer give data: " + bf.toString());
             } else {
                 System.out.println("get request not link");
             }
