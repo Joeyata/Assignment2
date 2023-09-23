@@ -13,9 +13,21 @@ public class ContentServer {
 
     public void Put_Request() {
         try {
+            URL url = new URL(server_name);
 
+            HttpURLConnection link = (HttpURLConnection) url.openConnection();
+
+            link.setRequestMethod("PUT");
+
+            int response = link.getResponseCode();
+
+            if (response == HttpURLConnection.HTTP_OK) {
+                // handle put
+            } else {
+                System.out.println("put request not link");
+            }
         } catch (Exception e) {
-            System.err.println("Failure to send get request: " + e.getMessage());
+            System.err.println("Failure to send put request: " + e.getMessage());
         }
     }
 

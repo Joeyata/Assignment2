@@ -13,7 +13,20 @@ public class GETClient {
 
     public void Get_Request() {
         try {
-            // send request
+            URL url = new URL(server_name + (port_number != null ? "/" + port_number : ""));
+
+            HttpURLConnection link = (HttpURLConnection) url.openConnection();
+
+            link.setRequestMethod("GET");
+
+            int response = link.getResponseCode();
+
+            if (response == HttpURLConnection.HTTP_OK) //200
+            {
+                // handle get
+            } else {
+                System.out.println("get request not link");
+            }
         } catch (Exception e) {
             System.err.println("Failure to send get request: " + e.getMessage());
         }
