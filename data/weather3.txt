@@ -1,0 +1,8 @@
+id:IDN132444
+name:China (strange place)
+state: LiaoNing
+time_zone:UTC
+local_date_time_full:20230324154714
+air_temp:23.7
+apparent_t:6.6
+cloud:cloudy

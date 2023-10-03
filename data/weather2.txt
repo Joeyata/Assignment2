@@ -1,0 +1,8 @@
+id:IDS76755
+name:Sydney (beautiful place)
+state: SA
+time_zone:CST
+local_date_time_full:20230624231400
+air_temp:9.5
+apparent_t:10.1
+cloud:No cloud
