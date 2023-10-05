@@ -36,6 +36,7 @@ public class ContentServer {
             int response = link.getResponseCode();
 
             if (response == HttpURLConnection.HTTP_OK) {
+                //System.out.println("heihei");
                 // handle put
             } else {
                 System.out.println("put request not link");
@@ -73,18 +74,19 @@ public class ContentServer {
     public static void main(String[] args) {
 
         if (args.length < 2) {
-            System.err.println("Usage: java ContentServer <server_Url> <filePath>");
+            System.err.println("Usage: java ContentServer <server_name> <file_path>");
             System.exit(1);
         }
 
         String server_name = args[0];
         String filePath = args[1];
         ContentServer server = new ContentServer(server_name, filePath);
-
-        /*
-        ContentServer server = new ContentServer("http://localhost:6971/" , "./data/weather1.txt");
         server.Put_Request();
 
+        /*
+        ContentServer server = new ContentServer("http://localhost:6971/" , "data/weather1.txt");
         */
+
+
     }
 }

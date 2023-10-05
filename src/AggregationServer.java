@@ -30,6 +30,7 @@ public class AggregationServer {
     class Handle_Request implements HttpHandler {
         public void handle(HttpExchange exc) throws IOException {
             try {
+
                 String method = exc.getRequestMethod();
                 if (method.equalsIgnoreCase("PUT")) {
                     handle_Put_Request(exc);
@@ -57,7 +58,7 @@ public class AggregationServer {
             //System.out.println("haha1");
             WeatherInfo weather = gson.fromJson(jsonString, WeatherInfo.class);
 
-            System.out.println(jsonString);
+            //System.out.println(jsonString);
             // Check if the weather data is valid
             if (weather == null || !weather.isValid()) {
                 exchange.sendResponseHeaders(500, 0); // Internal server error
@@ -81,15 +82,18 @@ public class AggregationServer {
         }
 
         private void handle_Get_Request(HttpExchange exchange) throws IOException {
-            System.out.println("nb");
+            //System.out.println("nb1");
             Gson gson = new Gson(); // Initialize Gson object
+            //System.out.println("nb2");
             Integer maxm = -1;
             WeatherInfo recent = new WeatherInfo(null, null,null,null,null,null,null,null);
+            //System.out.println("nb3");
             for (String key : weatherInfo_Map.keySet()) {
                 if(Time_Map.get(key) > maxm ) {maxm = Time_Map.get(key);recent = weatherInfo_Map.get(key);}
             }
+            //System.out.println("nb4");
             String jsonString = gson.toJson(recent);
-            System.out.println(jsonString);
+            //System.out.println(jsonString);
             // Send a response
             exchange.sendResponseHeaders(200, jsonString.length());
             OutputStream os = exchange.getResponseBody();

@@ -22,6 +22,7 @@ public class GETClient {
 
             link.setRequestMethod("GET");
 
+            //System.out.println("haha1");
             int response = link.getResponseCode();
 
             if (response == HttpURLConnection.HTTP_OK) //200
@@ -29,9 +30,11 @@ public class GETClient {
                 BufferedReader input_stream = new BufferedReader(new InputStreamReader(link.getInputStream()));
                 StringBuilder sb = new StringBuilder();
                 String rline;
+                //System.out.println("haha2");
                 while ((rline = input_stream.readLine()) != null) {
                     sb.append(rline);
                 }
+                //System.out.println("haha3");
                 input_stream.close();
 
                 System.out.println("AggregationServer give data: " + sb.toString());
@@ -64,7 +67,7 @@ public class GETClient {
     public static void main(String[] args) {
 
         if (args.length == 0) {
-            System.err.println("Usage: java GETClient <server_Url> [<port_number>]");
+            System.err.println("Usage: java GETClient <server_name> [<port_number>]");
             System.exit(1);
         }
 
