@@ -1,0 +1,8 @@
+id:testid
+name:testname
+state:teststate
+time_zone:testtz
+local_date_time_full:testtime
+air_temp:testtemp
+apparent_t:testap
+cloud:testcl

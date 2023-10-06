@@ -17,3 +17,9 @@ launch-contentserver:
 
 launch-getclient:
 	java -cp "src/build;lib/gson-2.10.1.jar" GETClient $(server_name) $(port_number);
+
+build-test:
+	javac -d $(BUILD_DIR) -cp "src/build;lib/gson-2.10.1.jar;lib/junit-4.12.jar" test/Auto_Test.java
+
+auto-test:
+	java -cp "src/build;lib/gson-2.10.1.jar;lib/junit-4.12.jar" Auto_Test

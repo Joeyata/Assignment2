@@ -47,7 +47,7 @@ public class ContentServer {
 
 
     }
-    private WeatherInfo ReadInfo(String filepath)
+    public static WeatherInfo ReadInfo(String filepath)
     {
         WeatherInfo info = new WeatherInfo(null,null,null,null,null,null,null,null);
 
